@@ -1355,7 +1355,7 @@ GameObject:
   - component: {fileID: 1871503938}
   - component: {fileID: 1871503937}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Score System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1383,7 +1383,7 @@ Transform:
   m_GameObject: {fileID: 1871503936}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.31729, y: 0.05, z: 10.09584}
+  m_LocalPosition: {x: 15.62, y: 0.05, z: 10.09584}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
