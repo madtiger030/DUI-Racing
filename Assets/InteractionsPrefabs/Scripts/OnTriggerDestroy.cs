@@ -1,18 +1,18 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OnTriggerDestroy : MonoBehaviour
 {
+    public int scoreValue = 1;
     // Utiliser pour détruire un objet quand vous arriver à un endroit
     //mettre se script sur un objet qui a un collider avec Is Trigger coché
 
-    public GameObject ObjetADetruire;
-    public string TagDeObjetADetruire;
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == TagDeObjetADetruire)
+        if (other.CompareTag("Player"))
         {
-            Destroy(ObjetADetruire);
+            ScoreManager_sc.instance.AddScore(scoreValue);
+            Destroy(gameObject);
         }
     }
 }
