@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class AddScore : MonoBehaviour
 {
-   // [SerializeField]
-   // GameObject score;
+    [SerializeField]
+    GameObject score;
 
     [SerializeField]
     TextMeshProUGUI tmpg;
