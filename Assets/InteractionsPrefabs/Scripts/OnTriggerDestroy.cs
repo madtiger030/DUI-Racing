@@ -12,7 +12,7 @@ public class OnTriggerDestroy : MonoBehaviour
         pot = true;
         if (other.CompareTag("Player"))
         {
-            ScoreManager_sc.instance.AddScore(scoreValue);
+            GameManager.instance.AddScore(scoreValue);
             Destroy(gameObject);
         }
     }

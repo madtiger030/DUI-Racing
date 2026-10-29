@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScoreManager_sc : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static ScoreManager_sc instance;
+    public static bool GameOver = false;
+    public static GameManager instance;
     public int score = 0;
 
     private void Awake()
@@ -16,5 +17,11 @@ public class ScoreManager_sc : MonoBehaviour
         score += amount;
         Debug.Log("Score: " + score);
 
+    }
+    public static void EndGame()
+    {
+        GameOver = true;
+        Time.timeScale = 0f;
+        Debug.Log("GAME OVER");
     }
 }

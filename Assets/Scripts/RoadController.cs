@@ -9,6 +9,7 @@ public class RoadController : MonoBehaviour
     public float RoadSpeed;
     public List<GameObject> ObjectList;
     public GameObject ObjectStorage;
+    public bool gameover;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,8 @@ public class RoadController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameover)
+            return;
         transform.position -= new Vector3(0, 0, RoadSpeed * Time.deltaTime);
         if (transform.position.z < 30 && SpawnedMoreRoad == false)
         {
