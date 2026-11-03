@@ -15,7 +15,11 @@ public class TestCrash : MonoBehaviour
 
             GameManager.EndGame();
 
-            GetComponent<CarController>().enabled = false;
+            CarController car = GetComponent<CarController>();
+            car.RawRotation = 0f;
+            car.enabled = false;
+
+            
         }
     }
 }
