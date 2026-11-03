@@ -12,6 +12,8 @@ public class OnTriggerDestroy : MonoBehaviour
         pot = true;
         if (other.CompareTag("Player"))
         {
+            Debug.Log(GameManager.instance);
+
             GameManager.instance.AddScore(scoreValue);
             Destroy(gameObject);
         }

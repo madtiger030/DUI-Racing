@@ -4,13 +4,18 @@ public class TestCrash : MonoBehaviour
 {
     public GameObject environment;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("CRASH avec " + collision.gameObject.name);
+        if (GameManager.GameOver)
+            return;
 
-        environment.GetComponent<RoadController>().gameover = true;
+        if (other.CompareTag("Obstacle"))
+        {
+            Debug.Log("CRASH avec " + other.gameObject.name);
 
-        GetComponent<CarController>().enabled = false;
+            GameManager.EndGame();
+
+            GetComponent<CarController>().enabled = false;
+        }
     }
-
 }
