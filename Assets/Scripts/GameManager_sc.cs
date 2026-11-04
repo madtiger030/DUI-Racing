@@ -10,6 +10,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int score = 0;
     public TextMeshProUGUI scoreText;
+    public float gameSpeed = 1f;
+    public float speedIncrease = 0.1f;
+    public float maxGameSpeed = 3f;
+    public float turnSpeedMultiplier = 1f;
+    public float turnSpeedIncrease = 0.05f;
+    public float maxTurnSpeedMultiplier = 2.5f;
 
     private void Awake()
     {
@@ -22,7 +28,14 @@ public class GameManager : MonoBehaviour
     {
         score += amount;
         scoreText.text = "Score: " + score;
-        Debug.Log("Score: " + score);
+
+        // Increase difficulty based on collected objects
+        gameSpeed = Mathf.Min(gameSpeed + speedIncrease * amount, maxGameSpeed);
+
+        turnSpeedMultiplier = Mathf.Min(
+            turnSpeedMultiplier + turnSpeedIncrease * amount,
+            maxTurnSpeedMultiplier
+        );
 
     }
     public static void EndGame()

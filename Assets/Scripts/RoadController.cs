@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,30 +11,49 @@ public class RoadController : MonoBehaviour
     public List<GameObject> ObjectList;
     public GameObject ObjectStorage;
     public bool gameover;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for (int i = 0; i < RoadLength/10; i++)
+        for (int i = 0; i < RoadLength / 10; i++)
         {
-            Instantiate(ObjectList[Random.Range((int)0, (int)ObjectList.Count)], new Vector3(Random.Range((int)-1,(int)2) * 5, 1, transform.position.z + 10 * i), Quaternion.identity, ObjectStorage.transform);
+            Instantiate(
+                ObjectList[Random.Range(0, ObjectList.Count)],
+                new Vector3(Random.Range(-1, 2) * 5,1, transform.position.z + 10 * i),
+                Quaternion.identity,
+                ObjectStorage.transform
+            );
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (gameover)
+        if (gameover || GameManager.GameOver)
             return;
-        transform.position -= new Vector3(0, 0, RoadSpeed * Time.deltaTime);
-        if (transform.position.z < 30 && SpawnedMoreRoad == false)
+        // Get current game speed multiplier
+        float speedMultiplier = 1f;
+        if (GameManager.instance != null)
         {
-            Instantiate(MoreRoad, new Vector3(0, 0, transform.position.z + RoadLength), transform.rotation);
+            speedMultiplier = GameManager.instance.gameSpeed;
+        }
+
+        // Increase road speed as score increases
+        float currentRoadSpeed = RoadSpeed * speedMultiplier;
+
+        // Move road toward player
+        transform.position -= new Vector3(0, 0, currentRoadSpeed * Time.deltaTime
+        );
+
+        // Spawn next road section
+        if (transform.position.z < 30 && !SpawnedMoreRoad)
+        {
+            Instantiate(MoreRoad,new Vector3(0,0,transform.position.z + RoadLength),transform.rotation);
+
             SpawnedMoreRoad = true;
         }
+
+        // Destroy old road section
         if (transform.position.z < -960)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
-
 }
