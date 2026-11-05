@@ -3,7 +3,6 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     public float RawRotation;
-    public float Rotation;
     public float RotationLimits;
     public float RotationScaleFactor;
     public float NaturalReturnFactor;
@@ -35,64 +34,67 @@ public class CarController : MonoBehaviour
         //Player inputs and rotation
         if (Input.GetKey(KeyCode.A))
         {
-            if (RawRotation - Time.deltaTime <= -RotationLimits)
+            if (RawRotation - Time.deltaTime / Mathf.Abs(RawRotation - 1f) <= -RotationLimits)
             {
                 RawRotation = -RotationLimits;
             }
-            else if (RawRotation <= 0)
+            else 
+            //if (RawRotation <= 0)
             {
                 RawRotation -= Time.deltaTime / Mathf.Abs(RawRotation - 1f);
             }
-            else if (RawRotation > 0)
+            //else if (RawRotation > 0)
             {
-                RawRotation -= Time.deltaTime * NaturalReturnFactor * 3f;
+                //RawRotation -= Time.deltaTime * NaturalReturnFactor * 3f;
             }
         }
         if (Input.GetKey(KeyCode.D))
         {
-            if (RawRotation + Time.deltaTime >= RotationLimits)
+            if (RawRotation + Time.deltaTime / Mathf.Abs(RawRotation + 1f) >= RotationLimits)
             {
                 RawRotation = RotationLimits;
             }
-            else if (RawRotation >= 0)
+            else 
+            //if (RawRotation >= 0)
             {
                 RawRotation += Time.deltaTime / Mathf.Abs(RawRotation + 1f);
             }
-            else if (RawRotation < 0)
+            //else if (RawRotation < 0)
             {
-                RawRotation += Time.deltaTime * NaturalReturnFactor * 3f;
+                //RawRotation += Time.deltaTime * NaturalReturnFactor * 3f;
             }
         }
 
-        if (RawRotation > 0 && transform.position.x + RawRotation > RoadWidth)
+        if (RawRotation > 0 && transform.position.x + RawRotation * VehicleTurnSpeed > RoadWidth)
         { transform.position = new Vector3(RoadWidth, 1, 0); }
-        else if (RawRotation < 0 && transform.position.x + RawRotation < -RoadWidth)
+        else if (RawRotation < 0 && transform.position.x + RawRotation * VehicleTurnSpeed < -RoadWidth)
         { transform.position = new Vector3(-RoadWidth, 1, 0);}
         else
         { transform.position += new Vector3(RawRotation * VehicleTurnSpeed, 0, 0); }
     }
     public void ResetToZero()
     {
+        float AmountToRotate = Time.deltaTime * NaturalReturnFactor * (Mathf.Sqrt(Mathf.Abs(RawRotation)) + 0.1f);
         if (RawRotation > 0)
         {
-            if (RawRotation < Time.deltaTime)
+            if (RawRotation < AmountToRotate)
             {
                 RawRotation = 0;
             }
             else
             {
-                RawRotation -= Time.deltaTime * NaturalReturnFactor;
+                RawRotation -= AmountToRotate;
             }
         }
         else if (RawRotation < 0)
         {
-            if (Mathf.Abs(RawRotation) < Time.deltaTime)
+            if (Mathf.Abs(RawRotation) < AmountToRotate)
             {
                 RawRotation = 0;
             }
             else
             {
-                RawRotation += Time.deltaTime * NaturalReturnFactor;
+                RawRotation += AmountToRotate;
             }
         }
     }

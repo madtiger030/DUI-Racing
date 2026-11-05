@@ -2938,6 +2938,8 @@ MonoBehaviour:
   MoreRoad: {fileID: 3478115257879534494}
   RoadLength: 1000
   RoadSpeed: 10
+  ObstaclesCount: 5
+  ObstacleWidthSpacing: 10
   ObjectList:
   - {fileID: 8924965037880844947, guid: 4411f85477d87b44ea25fd22780caf0f, type: 3}
   - {fileID: 1717469030429074270, guid: 3547acd7904b29f48b5a94c52a618eea, type: 3}
@@ -2945,6 +2947,7 @@ MonoBehaviour:
   - {fileID: 1686437811356602893, guid: df21ea66564f0a345aeb36e9a971ba66, type: 3}
   - {fileID: 3335392266567892140, guid: 42b32436f26491d4d9dc70636d73a5ee, type: 3}
   ObjectStorage: {fileID: 7957140925949698766}
+  gameover: 0
 --- !u!1 &3546978342536177382
 GameObject:
   m_ObjectHideFlags: 0
