@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class OnTriggerDestroy : MonoBehaviour
 {
     public int scoreValue = 1;
+    public AudioClip pickupSound;
     public bool pot;
     private bool collected = false;
     // Utiliser pour détruire un objet quand vous arriver à un endroit
@@ -15,14 +16,14 @@ public class OnTriggerDestroy : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+
             collected = true;
-            pot = true;
-
-            if (GameManager.instance != null)
-            {
-                GameManager.instance.AddScore(scoreValue);
-            }
-
+            GameManager.instance.AddScore(scoreValue);
+            //drinking sound when picked up
+            AudioSource.PlayClipAtPoint(
+                pickupSound,
+                Camera.main.transform.position
+            );
             Destroy(gameObject);
         }
     }

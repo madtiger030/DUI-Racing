@@ -803,7 +803,7 @@ GameObject:
   - component: {fileID: 386310842}
   m_Layer: 0
   m_Name: First person camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3466,7 +3466,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beer Bottle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2875697424597092866, guid: 3547acd7904b29f48b5a94c52a618eea, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 26811565289e2b54c8b11d2027aba174, type: 3}
+    - target: {fileID: 9118481654149917276, guid: 3547acd7904b29f48b5a94c52a618eea, type: 3}
+      propertyPath: pickupSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 26811565289e2b54c8b11d2027aba174, type: 3}
+    m_RemovedComponents:
+    - {fileID: 2875697424597092866, guid: 3547acd7904b29f48b5a94c52a618eea, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
