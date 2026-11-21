@@ -11,7 +11,7 @@ public class RoadController : MonoBehaviour
     public float RoadLength;
     public float RoadSpeed;
     public int ObstacleLengthSpacing;
-    public int ObstacleWidthSpacing;
+    public float ObstacleWidthSpacing;
     public List<GameObject> ObjectList;
     public GameObject ObjectStorage;
     public static float TotalDistance = 0;
@@ -20,7 +20,7 @@ public class RoadController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for (int i = 0; i < RoadLength / ObstacleLengthSpacing; i++)
+        for (int i = 0; i < 50; i++)
         {
             Instantiate(ObjectList[Random.Range((int)0, (int)ObjectList.Count)],
                     new Vector3(Random.Range((int)-1, (int)2) * ObstacleWidthSpacing, 0, transform.position.z + ObstacleLengthSpacing * (i + 1)),

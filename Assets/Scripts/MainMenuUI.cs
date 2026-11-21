@@ -61,6 +61,7 @@ public class MainMenuUI : MonoBehaviour
             yield return null;
         }
 
+        Debug.Log("Fade completed successfully!");
         SceneManager.LoadScene(firstSceneName);
     }
 

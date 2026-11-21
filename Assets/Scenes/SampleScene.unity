@@ -1531,7 +1531,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarController
   RawRotation: 0
-  Rotation: 0
   RotationLimits: 0.3
   RotationScaleFactor: 100
   NaturalReturnFactor: 0.5
@@ -3214,6 +3213,18 @@ PrefabInstance:
     - target: {fileID: 3478115257879534494, guid: 35982eea84b14b4429bf7704282ba8a8, type: 3}
       propertyPath: m_Name
       value: Environment
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180812990053750743, guid: 35982eea84b14b4429bf7704282ba8a8, type: 3}
+      propertyPath: RoadSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180812990053750743, guid: 35982eea84b14b4429bf7704282ba8a8, type: 3}
+      propertyPath: ObstacleWidthSpacing
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180812990053750743, guid: 35982eea84b14b4429bf7704282ba8a8, type: 3}
+      propertyPath: ObstacleLengthSpacing
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8915167657983461113, guid: 35982eea84b14b4429bf7704282ba8a8, type: 3}
       propertyPath: m_LocalPosition.x
