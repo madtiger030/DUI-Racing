@@ -31,7 +31,7 @@ public class RoadController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameover)
+        if (GameManager.GameOver)
             return;
 
         transform.position -= new Vector3(0, 0, RoadSpeed * Time.deltaTime * (TotalDistance/100 + 1));

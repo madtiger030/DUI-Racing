@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8666490249702259578}
   m_Layer: 0
   m_Name: BeerBottleHolder
-  m_TagString: Untagged
+  m_TagString: Bottle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 1717469030428852094, guid: 3547acd7904b29f48b5a94c52a618eea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 36.126
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717469030429074268, guid: 3547acd7904b29f48b5a94c52a618eea, type: 3}
+      propertyPath: m_TagString
+      value: Bottle
       objectReference: {fileID: 0}
     - target: {fileID: 1717469030429074270, guid: 3547acd7904b29f48b5a94c52a618eea, type: 3}
       propertyPath: m_Name

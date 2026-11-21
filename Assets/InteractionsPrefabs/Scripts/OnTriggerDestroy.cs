@@ -1,8 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class OnTriggerDestroy : MonoBehaviour
 {
+    public AudioClip pickupSound;
     public int scoreValue = 1;
     public bool pot;
     // Utiliser pour détruire un objet quand vous arriver à un endroit
@@ -16,6 +17,7 @@ public class OnTriggerDestroy : MonoBehaviour
 
             GameManager.instance.AddScore(scoreValue);
             Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(pickupSound,Camera.main.transform.position);
         }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8600351943106395028}
   m_Layer: 0
   m_Name: TrashBinHolder
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
