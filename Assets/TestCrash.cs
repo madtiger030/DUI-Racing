@@ -9,7 +9,6 @@ public class TestCrash : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        Debug.Log("TEST SON");
     }
     private void OnTriggerEnter(Collider other)
     {

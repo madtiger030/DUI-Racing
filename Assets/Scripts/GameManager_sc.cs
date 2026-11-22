@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         GameOver = false;
+        RoadController.TotalDistance = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void QuitGame()

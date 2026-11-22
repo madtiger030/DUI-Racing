@@ -1805,6 +1805,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881801690}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &904752644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904752646}
+  - component: {fileID: 904752645}
+  m_Layer: 0
+  m_Name: DrunkEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &904752645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904752644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07d67ec4c53a314ebe56573237b4a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrunkEffect
+  volume: {fileID: 934995022}
+--- !u!4 &904752646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904752644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.734, y: 39.68657, z: 5.30566}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &920456696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2140,6 +2185,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930805753}
   m_CullTransparentMesh: 1
+--- !u!1 &934995021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934995023}
+  - component: {fileID: 934995022}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &934995022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934995021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 731ccf9cb3d556646b9656959df91b35, type: 2}
+--- !u!4 &934995023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934995021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.734001, y: 39.686565, z: 5.305664}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158056321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,7 +2425,7 @@ PrefabInstance:
       objectReference: {fileID: 8800097779455171535, guid: 41d0a31ba19a50f4586208f0ffaaf9fd, type: 3}
     - target: {fileID: 5723140924514581289, guid: 41d0a31ba19a50f4586208f0ffaaf9fd, type: 3}
       propertyPath: ObstacleLengthSpacing
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8800097779455171535, guid: 41d0a31ba19a50f4586208f0ffaaf9fd, type: 3}
       propertyPath: m_Name
@@ -2980,6 +3074,7 @@ GameObject:
   - component: {fileID: 1935300383}
   - component: {fileID: 1935300382}
   - component: {fileID: 1935300381}
+  - component: {fileID: 1935300389}
   - component: {fileID: 1935300388}
   m_Layer: 0
   m_Name: Car
@@ -3002,7 +3097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   environment: {fileID: 0}
   crashSound: {fileID: 8300000, guid: 46beacc9e1fd19c4bb19955a064528d0, type: 3}
-  screamSound: {fileID: 8300000, guid: 0cda4f7e03a1b1944bc06cbaa57be92d, type: 3}
+  screamSound: {fileID: 8300000, guid: 1437511f03aa8f44d89e466520ad7a2a, type: 3}
 --- !u!54 &1935300382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3047,7 +3142,7 @@ MonoBehaviour:
   RotationScaleFactor: 50
   NaturalReturnFactor: 1.5
   RoadWidth: 3
-  VehicleTurnSpeed: 0.2
+  VehicleTurnSpeed: 0.8
 --- !u!65 &1935300384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3143,7 +3238,20 @@ Transform:
   - {fileID: 358546061}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1935300388
+--- !u!114 &1935300388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935300380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61945f894b00b3a43b3be865312ebe84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  hornSound: {fileID: 8300000, guid: 17d17842278beb844b9b12b676ecc6a7, type: 3}
+--- !u!82 &1935300389
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3155,7 +3263,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3363,7 +3471,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -3458,3 +3566,5 @@ SceneRoots:
   - {fileID: 410786797}
   - {fileID: 874385265}
   - {fileID: 809523044}
+  - {fileID: 934995023}
+  - {fileID: 904752646}
