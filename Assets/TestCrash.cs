@@ -5,6 +5,7 @@ public class TestCrash : MonoBehaviour
     public GameObject environment;
     public AudioClip crashSound;
     private AudioSource audioSource;
+    public AudioClip screamSound;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,6 +20,7 @@ public class TestCrash : MonoBehaviour
         {
             Debug.Log("CRASH");
             audioSource.PlayOneShot(crashSound);
+            audioSource.PlayOneShot(screamSound);
 
             CarController car = GetComponent<CarController>();
 

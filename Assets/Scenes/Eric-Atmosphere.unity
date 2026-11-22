@@ -2329,6 +2329,10 @@ PrefabInstance:
       propertyPath: MoreRoad
       value: 
       objectReference: {fileID: 8800097779455171535, guid: 41d0a31ba19a50f4586208f0ffaaf9fd, type: 3}
+    - target: {fileID: 5723140924514581289, guid: 41d0a31ba19a50f4586208f0ffaaf9fd, type: 3}
+      propertyPath: ObstacleLengthSpacing
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 8800097779455171535, guid: 41d0a31ba19a50f4586208f0ffaaf9fd, type: 3}
       propertyPath: m_Name
       value: Environment_2_Starter
@@ -2998,6 +3002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   environment: {fileID: 0}
   crashSound: {fileID: 8300000, guid: 46beacc9e1fd19c4bb19955a064528d0, type: 3}
+  screamSound: {fileID: 8300000, guid: 0cda4f7e03a1b1944bc06cbaa57be92d, type: 3}
 --- !u!54 &1935300382
 Rigidbody:
   m_ObjectHideFlags: 0
